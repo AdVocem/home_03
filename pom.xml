@@ -204,7 +204,7 @@
                 <configuration>
 
                     <suiteXmlFiles>
-                        <suiteXmlFile>src/test/resources/TestSuite.xml</suiteXmlFile>
+                        <suiteXmlFile>suits/OnlinerTVSearchSuite.xml</suiteXmlFile>
                     </suiteXmlFiles>
                     <!--					<groups>mygroup</groups>-->
                     <properties>
