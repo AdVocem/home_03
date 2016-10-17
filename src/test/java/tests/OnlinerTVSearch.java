@@ -25,8 +25,8 @@ public class OnlinerTVSearch extends BaseTest {
         pageTV.setBrend("Samsung");
         pageTV.setPriceTo(1000);
         pageTV.setDateFrom(2013);
+
         pageTV.setSizeFrom("39\"");
-        pageTV.setSizeTo("42\"");
         pageTV.setSizeTo("42\"");
         pageTV.assertResults();
     }

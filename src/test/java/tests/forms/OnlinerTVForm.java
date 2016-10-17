@@ -12,12 +12,13 @@ import java.util.List;
 public class OnlinerTVForm extends BaseForm {
     private TextBox txbSearchBar = new TextBox(By.id("fast-search"),"Search bar");
     private Label lbFilter = new Label(By.id("schema-filter"), "Products Filter");
-    private TextBox txbPriceFrom = new TextBox(By.xpath("//input[@placeholder=\"от\"]"));
-    private TextBox txbPriceTo = new TextBox(By.xpath("//input[@placeholder=\"до\"]"));
-    private TextBox txbDateFrom = new TextBox(By.xpath("//input[@placeholder=\"2010\"]"));
-    private TextBox txbDateTo = new TextBox(By.xpath("//input[@placeholder=\"2016\"]"));
-    private Select selSizeFromOp = new Select(browser.getDriver().findElement(By.xpath("//select[@class='schema-filter-control__item' and contains(@data-bind, \"facet.value.from\")]")));
-    private Select selSizeToOp = new Select(browser.getDriver().findElement(By.xpath("//select[@class='schema-filter-control__item' and contains(@data-bind, \"facet.value.from\")]")));
+    private TextBox txbPriceFrom = new TextBox(By.xpath("//input[@placeholder=\"от\"]"), "Price From");
+    private TextBox txbPriceTo = new TextBox(By.xpath("//input[@placeholder=\"до\"]"), "Price To");
+    private TextBox txbDateFrom = new TextBox(By.xpath("//input[@placeholder=\"2010\"]"), "Date From");
+    private TextBox txbDateTo = new TextBox(By.xpath("//input[@placeholder=\"2016\"]"), "Date To");
+    private ComboBox cbSizeFrom = new ComboBox(By.xpath("//select[@class='schema-filter-control__item' and contains(@data-bind, \"facet.value.from\")]"), "Size From");
+    private ComboBox cbSizeTo = new ComboBox(By.xpath("//select[@class='schema-filter-control__item' and contains(@data-bind, \"facet.value.to\")]"), "Size To");
+
     public void assertFilter(){
         assert(lbFilter.isPresent());
     }
@@ -56,11 +57,11 @@ public class OnlinerTVForm extends BaseForm {
     }
 
     public void setSizeFrom(String value) {
-        selSizeFromOp.selectByVisibleText(value);
+        cbSizeFrom.select(value);
     }
 
     public void setSizeTo(String value) {
-        selSizeToOp.selectByVisibleText(value);
+        cbSizeTo.select(value);
     }
 
     private CheckBox getBrand(String text) {
