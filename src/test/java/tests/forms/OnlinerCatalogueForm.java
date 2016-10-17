@@ -18,13 +18,15 @@ public class OnlinerCatalogueForm extends BaseForm {
     }
 
     public Label getCatalogueItem(String itemName){
-        String rawXPath = String.format("//div[@class='catalog-navigation']//span[contains(text(), \"%s\")]", itemName);
+        String rawXPath = String
+                .format("//div[@class='catalog-navigation']//span[contains(text(), \"%s\")]", itemName);
         Label lbCatalogueItem = new Label(By.xpath(rawXPath),"Catalogue Item");
         return lbCatalogueItem;
     }
 
     public Label getCatalogueSection(String sectionName){
-        String rawXPath = String.format("//div[@class='catalog-navigation']//a[contains(text(),  \"%s\")]", sectionName);
+        String rawXPath = String
+                .format("//div[@class='catalog-navigation']//a[contains(text(),  \"%s\")]", sectionName);
         Label lbCatalogueItem = new Label(By.xpath(rawXPath),"Catalogue Section");
         return lbCatalogueItem;
     }

@@ -1,5 +1,6 @@
 package tests;
 
+import org.junit.Assert;
 import webdriver.BaseTest;
 import tests.forms.*;
 
@@ -28,7 +29,22 @@ public class OnlinerTVSearch extends BaseTest {
 
         pageTV.setSizeFrom("39\"");
         pageTV.setSizeTo("42\"");
-        pageTV.assertResults();
+        pageTV.sortBy("Дорогие");
+        String [] links = pageTV.Results();
+
+        logger.step(4);
+        for (String link : links) {
+            OnlinerResultForm pageResult = new OnlinerResultForm();
+            pageResult.navigate(link);
+            Assert.assertTrue(pageResult.getPrice() < 1000 &&
+                              pageResult.getSize() >= 39  &&
+                              pageResult.getSize() <= 42 &&
+                              pageResult.isBrand("Samsung") &&
+                              pageResult.getYear() >= 2013);
+
+        }
+
+
     }
 }
 

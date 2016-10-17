@@ -40,7 +40,8 @@ public class ComboBox extends BaseElement {
 		waitForIsElementPresent();
 		info(String.format(getLoc("loc.text.typing") + " '%1$s'", value));
 		if (browser.getDriver() instanceof JavascriptExecutor) {
-			((JavascriptExecutor)browser.getDriver()).executeScript("arguments[0].style.border='3px solid red'", element);
+			((JavascriptExecutor)browser.getDriver())
+					.executeScript("arguments[0].style.border='3px solid red'", element);
 		}
 		element.sendKeys(value);
 	}
