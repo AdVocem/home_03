@@ -7,7 +7,7 @@ import webdriver.elements.Label;
 
 public class OnlinerMainForm extends BaseForm {
     private TextBox txbSearchBar = new TextBox(By.id("fast-search"),"Search bar");
-    private Label lbForum = new Label(By.className("b-main-page-blocks-footer-3"),"Forum Section");
+    private Label   lbForum      = new Label(By.className("b-main-page-blocks-footer-3"),"Forum Section");
 
     public void assertForum(){
         assert(lbForum.isPresent());
@@ -27,7 +27,6 @@ public class OnlinerMainForm extends BaseForm {
     public Label getMenuItem(String itemName){
         String rawXPath = String
                 .format("//span[@class='b-main-navigation__text' and contains(text(), \"%s\")]", itemName);
-        Label lbMenuItem = new Label(By.xpath(rawXPath),"Menu Item");
-        return lbMenuItem;
+        return new Label(By.xpath(rawXPath),"Menu Item");
     }
 }

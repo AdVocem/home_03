@@ -1,7 +1,6 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Onliner TV search suit">
 	<test name="Search TV">
-		<parameter name="baseURL"  value="https://www.onliner.by/"/>
 		<classes>
 			<class name="tests.OnlinerTVSearch"></class>
 		</classes>

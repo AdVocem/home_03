@@ -30,7 +30,7 @@ public class OnlinerTVSearch extends BaseTest {
         pageTV.setSizeFrom("39\"");
         pageTV.setSizeTo("42\"");
         pageTV.sortBy("Дорогие");
-        String [] links = pageTV.Results();
+        String [] links = pageTV.getResults();
 
         logger.step(4);
         for (String link : links) {
